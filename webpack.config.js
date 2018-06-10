@@ -16,15 +16,28 @@ module.exports = {
         rules: [{
             test: /\.css$/,
             use: ExtractTextPlugin.extract(['css-loader'])
+        },
+        {
+            test: /\.jpe?g$|\.ico$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/,
+            use: [
+                {
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[hash:4].[ext]',
+                        outputPath: 'images/'
+                    }
+                },
+            ]
         }]
     },
 
     plugins: [
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
-            title: '我的收款码',
+            title: '聚合收款码',
             filename: "index.html",
-            template: "src/index.html",
+            template: 'underscore-template-loader!./src/index.ejs',
+            favicon: "src/images/favicon.ico",
             inject: true,
             minify: {
                 collapseWhitespace: true,

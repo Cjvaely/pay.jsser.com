@@ -1,22 +1,17 @@
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" type="image/x-icon" href="https://blog.jsser.com/favicon.ico">
-    <title>
-        <%= htmlWebpackPlugin.options.title %>
-    </title>
+    <title><%= htmlWebpackPlugin.options.title %></title>
 </head>
-
 <body>
     <header class="header" id="header">
         <span id="pay-title"><%= htmlWebpackPlugin.options.title %></span>
     </header>
     <section class="container">
         <div class="qrcode-txt">
-            <img src="https://assets-cdn.dwz.st/3287767.jpeg" id="avatar" />
+            <img src="images/avatar.jpeg" id="avatar"/>
         </div>
         <div class="qrcode" id="qrcode"></div>
         <div class="qrcode-footer">
@@ -31,17 +26,6 @@
         </div>
         <div class="qrcode-footer-text" id="qrcode-text">打开手机微信、QQ或者支付宝扫码付款</div>
     </section>
-    <script>
-        var args = "";
-        (function(args) {
-            var ma = document.createElement("script");
-            ma.type = "text/javascript";
-            ma.async = true;
-            ma.src = '//log.jsser.com/ga.js?' + args;
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.appendChild(ma, s);
-        })(args);
-    </script>
 </body>
 
 

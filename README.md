@@ -4,7 +4,7 @@
 
 本项目目的是将支付宝、微信支付、QQ钱包 收款码合并成一张收款码。
 
-![我的收款码](https://assets-cdn.dwz.st/WechatIMG34.jpeg)
+![聚合收款码](screenshot.jpg "收款码")
 
 ### 依赖
 
@@ -22,10 +22,23 @@ npm install
 ```
 
 
-### 修改配置
+### 配置更新
 
-修改src/js/app.js中 `var payConfig 变量参数`
+```js
+// file: src/js/app.js 
+// line：5 - 8行
 
+var payConfig = {
+    default: "qq",
+    accounts: {
+        union: window.location.href,
+        wechat: "填写你的微信收款二维码地址",
+        alipay: "填写你的支付宝收款二维码地址",
+        qq: "填写你的QQ收款二维码地址"
+    }
+};
+
+```
 
 ### 打包编译
 ```bash
